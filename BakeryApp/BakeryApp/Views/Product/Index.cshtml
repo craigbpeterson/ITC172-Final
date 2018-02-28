@@ -6,19 +6,27 @@
 <h2>Tasty Treats</h2>
 
 <table class="table">
+    <!-- are the table headings necessary?
     <tr>
-        <th>@Html.DisplayNameFor(model => model.ProductName)</th>
-        <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+        <th>Product</th>
+        <th>Price</th>
         <th></th>
     </tr>
+    -->
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
-        <td>@Html.DisplayFor(modelItem => item.ProductPrice)</td>
-        <td>@Html.ActionLink("Buy", "Index", new {id=item.ProductKey})</td>
-    </tr>
+        string imgsrc = "~/Content/Images/" + item.ProductKey + ".jpg";
+        string imgalt = item.ProductName;
+        <tr>
+            <td class="product-image">
+                @Html.DisplayFor(modelItem => item.ProductName)
+                <br />
+                <img width="100" src="@Url.Content(imgsrc)" alt="@imgalt" />
+            </td>
+            <td class="price">$@Html.DisplayFor(modelItem => item.ProductPrice)</td>
+            <td class="buy">@Html.ActionLink("Buy", "Index", new { id = item.ProductKey })</td>
+        </tr>
     }
 </table>
 

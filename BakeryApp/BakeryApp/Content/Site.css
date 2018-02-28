@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+table.table {
+    max-width: 600px;
+}
+
+td.product-image {
+    width: 200px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.table tbody > tr > td.price {
+    width: 200px;
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tbody > tr > td.buy {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
