@@ -16,13 +16,18 @@
 
     @foreach (var item in Model)
     {
-        string imgsrc = "~/Content/Images/" + item.ProductKey + ".jpg";
+        string imgsrc = "~/Content/Images/default.jpg";
+        @if (item.ProductKey <= 10)
+        {
+            imgsrc = "~/Content/Images/" + item.ProductKey + ".jpg";
+        }
+       
         string imgalt = item.ProductName;
         <tr>
             <td class="product-image">
                 @Html.DisplayFor(modelItem => item.ProductName)
                 <br />
-                <img width="100" src="@Url.Content(imgsrc)" alt="@imgalt" />
+                <img src="@Url.Content(imgsrc)" alt="@imgalt" />
             </td>
             <td class="price">$@Html.DisplayFor(modelItem => item.ProductPrice)</td>
             <td class="buy">@Html.ActionLink("Buy", "Index", new { id = item.ProductKey })</td>

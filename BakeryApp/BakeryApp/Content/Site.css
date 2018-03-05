@@ -33,6 +33,10 @@ td.product-image {
     text-align: center;
 }
 
+.table img {
+    width: 100px;
+}
+
 .table tbody > tr > td.price {
     width: 200px;
     font-size: 2em;
@@ -45,4 +49,30 @@ td.product-image {
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
+}
+
+section.bio {
+    max-width: 400px;
+    background-color: #f1f1f1;
+    padding: 1em;
+    margin-right: 1em;
+    border-radius: 1em;
+    float: left;
+}
+
+section.bio h3 {
+    margin-top: 0;
+}
+
+section.bio img {
+    width: 372px;
+}
+
+section.bio p {
+    margin-top: 1em;
+}
+
+footer {
+    clear: both;
+    padding-top: 1em;
 }
