@@ -32,6 +32,7 @@ namespace BakeryApp.Controllers
 
             Message m = new Message();
             m.MessageText = "Thanks for Registering.";
+            m.MessageTitle = "Registration Successful.";
             return View("Result", m);
         }
 

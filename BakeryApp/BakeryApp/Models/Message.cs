@@ -8,5 +8,6 @@ namespace BakeryApp.Models
     public class Message
     {
         public string MessageText { get; set; }
+        public string MessageTitle { get; set; }
     }
 }

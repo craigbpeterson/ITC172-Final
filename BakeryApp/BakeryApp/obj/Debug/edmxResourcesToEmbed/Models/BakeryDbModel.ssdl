@@ -110,6 +110,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="usp_PersonLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PersonEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="PersonPhone" Type="nchar" Mode="In" />
+  </Function>
   <EntityContainer Name="BakeryModelStoreContainer">
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
