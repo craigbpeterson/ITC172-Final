@@ -17,23 +17,27 @@ namespace BakeryApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "UserName, Password")] LoginClass p)
+        public ActionResult Index([Bind(Include = "PersonEmail, PersonPhone")]LoginClass lc)
         {
-            BakeryEntities db = new BakeryEntities();
+            BakeryEntities1 db = new BakeryEntities1();
 
-            int loginResult = db.usp_PersonLogin(p.UserName, p.Password);
+            int loginResult = db.usp_Login(lc.PersonEmail, lc.PersonPhone);
+
+            System.Diagnostics.Debug.WriteLine("PersonEmail= " + lc.PersonEmail);
+            System.Diagnostics.Debug.WriteLine("PersonPhone= " + lc.PersonPhone);
+            System.Diagnostics.Debug.WriteLine("loginResult= " + loginResult);
 
             if (loginResult != -1)
             {
                 var uid = (from r in db.People
-                           where r.PersonEmail.Equals(p.UserName)
+                           where r.PersonEmail.Equals(lc.PersonEmail)
                            select r.PersonKey).FirstOrDefault();
 
                 int rKey = (int)uid;
                 Session["PersonKey"] = rKey;
 
                 Message m = new Message();
-                m.MessageText = "Thank you, " + p.UserName + " for loggin' in." +
+                m.MessageText = "Thank you, " + lc.PersonEmail + " for loggin' in." +
                     "Feel free to browse our tasty selection.";
                 m.MessageTitle = "Login Successful.";
 

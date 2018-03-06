@@ -110,7 +110,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="usp_PersonLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="usp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PersonEmail" Type="nvarchar" Mode="In" />
     <Parameter Name="PersonPhone" Type="nchar" Mode="In" />
   </Function>

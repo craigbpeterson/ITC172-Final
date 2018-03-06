@@ -9,7 +9,7 @@ namespace BakeryApp.Controllers
 {
     public class RegistrationController : Controller
     {
-        BakeryEntities db = new BakeryEntities();
+        BakeryEntities1 db = new BakeryEntities1();
         // GET: Registration
         public ActionResult Index()
         {

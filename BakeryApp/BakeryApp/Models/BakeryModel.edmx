@@ -115,7 +115,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="usp_PersonLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="usp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PersonEmail" Type="nvarchar" Mode="In" />
           <Parameter Name="PersonPhone" Type="nchar" Mode="In" />
         </Function>
@@ -270,7 +270,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BakeryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BakeryEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="People" EntityType="Self.Person" />
           <EntitySet Name="Products" EntityType="Self.Product" />
@@ -296,7 +296,7 @@
             <End Role="Sale" EntitySet="Sales" />
             <End Role="SaleDetail" EntitySet="SaleDetails" />
           </AssociationSet>
-          <FunctionImport Name="usp_PersonLogin">
+          <FunctionImport Name="usp_Login">
             <Parameter Name="PersonEmail" Mode="In" Type="String" />
             <Parameter Name="PersonPhone" Mode="In" Type="String" />
           </FunctionImport>
@@ -306,7 +306,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BakeryModelStoreContainer" CdmEntityContainer="BakeryEntities">
+        <EntityContainerMapping StorageEntityContainer="BakeryModelStoreContainer" CdmEntityContainer="BakeryEntities1">
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="BakeryModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
@@ -362,7 +362,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="usp_PersonLogin" FunctionName="BakeryModel.Store.usp_PersonLogin" />
+          <FunctionImportMapping FunctionImportName="usp_Login" FunctionName="BakeryModel.Store.usp_Login" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

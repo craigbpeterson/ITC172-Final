@@ -15,10 +15,10 @@ namespace BakeryApp.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class BakeryEntities : DbContext
+    public partial class BakeryEntities1 : DbContext
     {
-        public BakeryEntities()
-            : base("name=BakeryEntities")
+        public BakeryEntities1()
+            : base("name=BakeryEntities1")
         {
         }
     
@@ -33,7 +33,7 @@ namespace BakeryApp.Models
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<SaleDetail> SaleDetails { get; set; }
     
-        public virtual int usp_PersonLogin(string personEmail, string personPhone)
+        public virtual int usp_Login(string personEmail, string personPhone)
         {
             var personEmailParameter = personEmail != null ?
                 new ObjectParameter("PersonEmail", personEmail) :
@@ -43,7 +43,7 @@ namespace BakeryApp.Models
                 new ObjectParameter("PersonPhone", personPhone) :
                 new ObjectParameter("PersonPhone", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_PersonLogin", personEmailParameter, personPhoneParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_Login", personEmailParameter, personPhoneParameter);
         }
     }
 }

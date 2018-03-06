@@ -150,5 +150,9 @@
       <Parameter Name="PersonEmail" Mode="In" Type="String" />
       <Parameter Name="PersonPhone" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="usp_Login">
+      <Parameter Name="PersonEmail" Mode="In" Type="String" />
+      <Parameter Name="PersonPhone" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

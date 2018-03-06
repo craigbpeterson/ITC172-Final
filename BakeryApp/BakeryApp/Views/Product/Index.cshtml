@@ -17,7 +17,7 @@
     @foreach (var item in Model)
     {
         string imgsrc = "~/Content/Images/default.jpg";
-        @if (item.ProductKey <= 10)
+        if (item.ProductKey <= 10)
         {
             imgsrc = "~/Content/Images/" + item.ProductKey + ".jpg";
         }

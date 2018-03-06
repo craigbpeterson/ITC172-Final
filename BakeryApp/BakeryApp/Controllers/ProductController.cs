@@ -10,7 +10,7 @@ namespace BakeryApp.Controllers
 {
     public class ProductController : Controller
     {
-        private BakeryEntities db = new BakeryEntities();
+        private BakeryEntities1 db = new BakeryEntities1();
         // GET: Product
         public ActionResult Index()
         {

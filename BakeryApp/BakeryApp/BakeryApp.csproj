@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -158,37 +159,37 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BakeryDbModel.Context.cs">
+    <Compile Include="Models\BakeryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryDbModel.Context.tt</DependentUpon>
+      <DependentUpon>BakeryModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BakeryDbModel.cs">
+    <Compile Include="Models\BakeryModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BakeryDbModel.Designer.cs">
+    <Compile Include="Models\BakeryModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryDbModel.edmx</DependentUpon>
+      <DependentUpon>BakeryModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginClass.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Person.cs">
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sale.cs">
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SaleDetail.cs">
-      <DependentUpon>BakeryDbModel.tt</DependentUpon>
+      <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -210,27 +211,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\BakeryDbModel.Context.tt">
+    <Content Include="Models\BakeryModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BakeryDbModel.Context.cs</LastGenOutput>
-      <DependentUpon>BakeryDbModel.edmx</DependentUpon>
+      <DependentUpon>BakeryModel.edmx</DependentUpon>
+      <LastGenOutput>BakeryModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BakeryDbModel.tt">
+    <Content Include="Models\BakeryModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BakeryDbModel.edmx</DependentUpon>
-      <LastGenOutput>BakeryDbModel.cs</LastGenOutput>
+      <DependentUpon>BakeryModel.edmx</DependentUpon>
+      <LastGenOutput>BakeryModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\BakeryDbModel.edmx">
+    <EntityDeploy Include="Models\BakeryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BakeryDbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>BakeryModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BakeryDbModel.edmx.diagram">
-      <DependentUpon>BakeryDbModel.edmx</DependentUpon>
+    <Content Include="Models\BakeryModel.edmx.diagram">
+      <DependentUpon>BakeryModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -261,6 +262,7 @@
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Shared\Result.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\AddProduct\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
