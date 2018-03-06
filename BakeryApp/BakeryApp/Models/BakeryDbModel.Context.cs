@@ -12,6 +12,8 @@ namespace BakeryApp.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class BakeryEntities : DbContext
     {
@@ -30,5 +32,18 @@ namespace BakeryApp.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<SaleDetail> SaleDetails { get; set; }
+    
+        public virtual int usp_PersonLogin(string personEmail, string personPhone)
+        {
+            var personEmailParameter = personEmail != null ?
+                new ObjectParameter("PersonEmail", personEmail) :
+                new ObjectParameter("PersonEmail", typeof(string));
+    
+            var personPhoneParameter = personPhone != null ?
+                new ObjectParameter("PersonPhone", personPhone) :
+                new ObjectParameter("PersonPhone", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_PersonLogin", personEmailParameter, personPhoneParameter);
+        }
     }
 }

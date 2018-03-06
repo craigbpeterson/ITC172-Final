@@ -146,5 +146,9 @@
       <End Role="Sale" EntitySet="Sales" />
       <End Role="SaleDetail" EntitySet="SaleDetails" />
     </AssociationSet>
+    <FunctionImport Name="usp_PersonLogin">
+      <Parameter Name="PersonEmail" Mode="In" Type="String" />
+      <Parameter Name="PersonPhone" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

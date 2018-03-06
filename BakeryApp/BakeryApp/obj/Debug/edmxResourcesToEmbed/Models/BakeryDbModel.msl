@@ -56,5 +56,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_PersonLogin" FunctionName="BakeryModel.Store.usp_PersonLogin" />
   </EntityContainerMapping>
 </Mapping>
