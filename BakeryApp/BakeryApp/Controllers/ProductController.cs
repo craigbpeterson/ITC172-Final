@@ -23,7 +23,9 @@ namespace BakeryApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Product p = db.Products.Find(id);
+
             if(p == null)
             {
                 return HttpNotFound();

@@ -76,3 +76,9 @@ footer {
     clear: both;
     padding-top: 1em;
 }
+
+body div.container div.jumbotronbg {
+    background-image: url("/Content/Images/jumbotronbg.jpg");
+    color: #fff;
+    border-radius:0;
+}
