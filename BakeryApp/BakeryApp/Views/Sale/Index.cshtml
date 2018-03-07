@@ -1,0 +1,35 @@
+﻿@model BakeryApp.Models.ProductSale
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Checkout</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+            <th>Eating In?</th>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayFor(modelItem => modelItem.ProductName)</td>
+            <td>@Html.DisplayFor(modelItem => modelItem.ProductPrice)</td>
+            <td>@Html.EditorFor(modelItem => modelItem.ProductQuantity)</td>
+            <td>@Html.DropDownList("DiscountType")</td>
+            <td>@Html.CheckBox("EatIn", false)</td>
+        </tr>
+</table>
+    <input type="submit" value="Place Order" class="btn btn-default" />
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

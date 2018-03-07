@@ -185,6 +185,7 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductSale.cs" />
     <Compile Include="Models\Sale.cs">
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
@@ -263,10 +264,10 @@
     <Content Include="Views\Shared\Result.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\AddProduct\Index.cshtml" />
+    <Content Include="Views\Sale\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sale\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

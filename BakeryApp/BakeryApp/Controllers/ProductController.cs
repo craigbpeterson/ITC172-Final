@@ -30,7 +30,9 @@ namespace BakeryApp.Controllers
             {
                 return HttpNotFound();
             }
-            return RedirectToAction("Index", "Sale", p);
+
+            ProductSale ps = new ProductSale(p.ProductName, p.ProductPrice);
+            return RedirectToAction("Index", "Sale", ps);
         }
     }
 }
