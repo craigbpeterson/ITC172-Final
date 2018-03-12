@@ -5,7 +5,7 @@
 
 <h2>Tasty Treats</h2>
 
-<table class="table">
+<table class="table products">
     <!-- are the table headings necessary?
     <tr>
         <th>Product</th>
@@ -30,7 +30,7 @@
                 <img src="@Url.Content(imgsrc)" alt="@imgalt" />
             </td>
             <td class="price">$@Html.DisplayFor(modelItem => item.ProductPrice)</td>
-            <td class="buy">@Html.ActionLink("Buy", "Index", new { id = item.ProductKey })</td>
+            <td class="buy">@Html.ActionLink("Buy", "Buy", new { id = item.ProductKey })</td>
         </tr>
     }
 </table>

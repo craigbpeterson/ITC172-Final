@@ -1,0 +1,9 @@
+﻿@model BakeryApp.Models.Message
+@{
+    ViewBag.Title = "Receipt";
+}
+
+<h2>Receipt</h2>
+
+<h2>@Html.DisplayTextFor(model => model.MessageTitle)</h2>
+<p>@Html.DisplayTextFor(model => model.MessageText)</p>

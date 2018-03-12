@@ -1,2 +1,2 @@
-﻿select * from Employee;
-select * from Person;
+﻿SELECT * FROM Sale
+SELECT * FROM SaleDetail

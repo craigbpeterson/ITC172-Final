@@ -9,16 +9,21 @@ namespace BakeryApp.Models
     {
         public ProductSale() { }
 
-        public ProductSale(string PName, decimal price, int quantity = 1)
+        public ProductSale(int Key, string Name, decimal Price, int Quantity = 1, int Discount = 1, bool EatIn = false)
         {
-            ProductName = PName;
-            ProductPrice = price;
-            ProductQuantity = quantity;
+            ProductKey = Key;
+            ProductName = Name;
+            ProductPrice = Price;
+            ProductQuantity = Quantity;
+            DiscountType = Discount;
+            CustomerEatIn = EatIn;
         }
 
+        public int ProductKey { get; set; }
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
         public int ProductQuantity { get; set; }
-        public bool EatIn { get; set; }
+        public int DiscountType { get; set; }
+        public bool CustomerEatIn { get; set; }
     }
 }

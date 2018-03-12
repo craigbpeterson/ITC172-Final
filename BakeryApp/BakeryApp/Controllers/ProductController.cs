@@ -24,15 +24,17 @@ namespace BakeryApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            Session["PurchaseSelection"] = id;
+
+
             Product p = db.Products.Find(id);
 
-            if(p == null)
+            if (p == null)
             {
                 return HttpNotFound();
             }
-
-            ProductSale ps = new ProductSale(p.ProductName, p.ProductPrice);
-            return RedirectToAction("Index", "Sale", ps);
+                        
+            return RedirectToAction("Index", "Sale");
         }
     }
 }

@@ -5,29 +5,44 @@
 
 <h2>Checkout</h2>
 
+@{ 
+    string imgsrc = "~/Content/Images/default.jpg";
+    if (Model.ProductKey <= 10)
+    {
+        imgsrc = "~/Content/Images/" + Model.ProductKey + ".jpg";
+    }
+
+    string imgalt = Model.ProductName;
+}
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <table class="table">
+    <table class="table sale">
         <tr>
             <th>Product Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Discount</th>
             <th>Eating In?</th>
+            <th></th>
         </tr>
 
         <tr>
-            <td>@Html.DisplayFor(modelItem => modelItem.ProductName)</td>
-            <td>@Html.DisplayFor(modelItem => modelItem.ProductPrice)</td>
-            <td>@Html.EditorFor(modelItem => modelItem.ProductQuantity)</td>
-            <td>@Html.DropDownList("DiscountType")</td>
-            <td>@Html.CheckBox("EatIn", false)</td>
+            <td class="product-image">
+                @Html.DisplayFor(model => model.ProductName)
+                <br />
+                <img src="@Url.Content(imgsrc)" alt="@imgalt" />
+            </td>
+            <td>$@Html.DisplayFor(model => model.ProductPrice)</td>
+            <td>@Html.EditorFor(model => model.ProductQuantity)</td>  
+            <td>@Html.DropDownList("DiscountType", null, new { htmlAttributes = new { @class = "form-control" } })</td>
+            <td>@Html.CheckBox("CustomerEatIn", false)</td>
+            <td><input type="submit" value="Place Order" class="btn btn-default" /></td>
         </tr>
-</table>
-    <input type="submit" value="Place Order" class="btn btn-default" />
-
+    </table>
 }
 
 @section Scripts {

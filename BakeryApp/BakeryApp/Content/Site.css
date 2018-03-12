@@ -23,7 +23,13 @@ textarea {
     max-width: 280px;
 }
 
-table.table {
+body div.container div.jumbotronbg {
+    background-image: url("/Content/Images/jumbotronbg.jpg");
+    color: #fff;
+    border-radius: 0;
+}
+
+table.products {
     max-width: 600px;
 }
 
@@ -33,22 +39,26 @@ td.product-image {
     text-align: center;
 }
 
-.table img {
+table.products img, table.sale img {
     width: 100px;
 }
 
-.table tbody > tr > td.price {
+table.products tbody > tr > td.price {
     width: 200px;
     font-size: 2em;
     text-align: center;
     vertical-align: middle;
 }
 
-.table tbody > tr > td.buy {
+table.products tbody > tr > td.buy {
     font-size: 2em;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
+}
+
+table.sale {
+    width: 900px;
 }
 
 section.bio {
@@ -75,10 +85,4 @@ section.bio p {
 footer {
     clear: both;
     padding-top: 1em;
-}
-
-body div.container div.jumbotronbg {
-    background-image: url("/Content/Images/jumbotronbg.jpg");
-    color: #fff;
-    border-radius:0;
 }
