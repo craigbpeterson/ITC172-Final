@@ -108,13 +108,17 @@ namespace BakeryApp.Controllers
             anotherSale.SaleDetailDiscount = (decimal)discountAmount;
             anotherSale.SaleDetailSaleTaxPercent = ((decimal)salesTax - 1);
             anotherSale.SaleDetailEatInTax = (decimal)EatInTax;
+            anotherSale.SaleKey = s.SaleKey;
             db.SaleDetails.Add(anotherSale);
 
             db.SaveChanges();
 
             Message m = new Message();
             m.MessageTitle = "Transaction Complete";
-            m.MessageText = "Thank you for your purchase!";
+            m.MessageText = "Thank you for your purchase!" + ".    " +
+                "Item: " + ps.ProductName + ".    " +
+                "Quantity: " + ps.ProductQuantity + ".    " +
+                "Total: " + anotherSale.SaleDetailPriceCharged;
 
             return View("Receipt", m);
         }
