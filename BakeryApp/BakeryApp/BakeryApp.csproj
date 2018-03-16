@@ -186,6 +186,7 @@
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductSale.cs" />
+    <Compile Include="Models\ReceiptModel.cs" />
     <Compile Include="Models\Sale.cs">
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>

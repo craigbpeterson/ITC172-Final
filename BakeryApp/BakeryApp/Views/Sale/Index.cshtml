@@ -20,6 +20,9 @@
 {
     @Html.AntiForgeryToken()
 
+    <div class="personselect">Select Customer:<br />@Html.DropDownListFor(model => model.CustomerKey, ViewBag.CustomerSelect as IEnumerable<SelectListItem>)</div>
+    <div class="personselect">Select Employee:<br />@Html.DropDownListFor(model => model.EmployeeKey, ViewBag.EmployeeSelect as IEnumerable<SelectListItem>)</div>
+    
     <table class="table sale">
         <tr>
             <th>Product Name</th>

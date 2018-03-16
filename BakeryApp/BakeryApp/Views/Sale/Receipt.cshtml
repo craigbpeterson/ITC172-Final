@@ -1,9 +1,35 @@
-﻿@model BakeryApp.Models.Message
+﻿@model BakeryApp.Models.ReceiptModel
 @{
     ViewBag.Title = "Receipt";
 }
 
-<h2>Receipt</h2>
-
 <h2>@Html.DisplayTextFor(model => model.MessageTitle)</h2>
 <p>@Html.DisplayTextFor(model => model.MessageText)</p>
+
+@{
+    string imgsrc = "~/Content/Images/default.jpg";
+    if (Model.ProductKey <= 10)
+    {
+        imgsrc = "~/Content/Images/" + Model.ProductKey + ".jpg";
+    }
+
+    string imgalt = Model.ProductName;
+}
+
+<h3>Purchase Summary</h3>
+<table class="table receipt">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td class="product-image">
+            @Html.DisplayFor(model => model.ProductName)
+                <br />
+                <img src="@Url.Content(imgsrc)" alt="@imgalt" />
+        </td>
+        <td class="info">@Html.DisplayTextFor(model => model.ProductQuantity)</td>
+        <td class="info">@Html.DisplayTextFor(model => model.TransactionTotal)</td>
+    </tr>
+</table>

@@ -9,7 +9,7 @@ namespace BakeryApp.Models
     {
         public ProductSale() { }
 
-        public ProductSale(int Key, string Name, decimal Price, int Quantity = 1, int Discount = 1, bool EatIn = false)
+        public ProductSale(int Key, string Name, decimal Price, int Quantity, int Discount, bool EatIn, int Customer, int Employee)
         {
             ProductKey = Key;
             ProductName = Name;
@@ -17,6 +17,8 @@ namespace BakeryApp.Models
             ProductQuantity = Quantity;
             DiscountType = Discount;
             CustomerEatIn = EatIn;
+            CustomerKey = Customer;
+            EmployeeKey = Employee;
         }
 
         public int ProductKey { get; set; }
@@ -25,5 +27,7 @@ namespace BakeryApp.Models
         public int ProductQuantity { get; set; }
         public int DiscountType { get; set; }
         public bool CustomerEatIn { get; set; }
+        public int CustomerKey { get; set; }
+        public int EmployeeKey { get; set; }
     }
 }

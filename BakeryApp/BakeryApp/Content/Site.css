@@ -29,7 +29,7 @@ body div.container div.jumbotronbg {
     border-radius: 0;
 }
 
-table.products {
+table.products, table.receipt {
     max-width: 600px;
 }
 
@@ -39,7 +39,7 @@ td.product-image {
     text-align: center;
 }
 
-table.products img, table.sale img {
+table.products img, table.sale img, table.receipt img {
     width: 100px;
 }
 
@@ -59,6 +59,17 @@ table.products tbody > tr > td.buy {
 
 table.sale {
     width: 900px;
+    clear: both;
+}
+
+div.personselect {
+    float: left;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+table.receipt tbody > tr > td.info {
+    font-size:1.5em
 }
 
 section.bio {
